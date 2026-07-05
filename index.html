@@ -1,12 +1,156 @@
 <!DOCTYPE html>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-image: url('55200227579_cea6f3a4fb_o.jpg');
+        background-size: cover;
+        height: 100vh;
+        margin: 0;
+    }
+
+    #div-style {
+        border: solid;
+        border-color: white;
+        border-width: 2px;
+        border-radius: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #top_banner {
+        background-color: #070034;
+        padding: 10px 30px;
+    }
+
+    #heading1_font {
+        font: 36px Calibri, sans-serif;
+        color: white;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        
+    }
+
+    #heading2_font, #text_font, .content-link {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    #heading2_font {
+        font: 28px Calibri, sans-serif;
+        color: white;
+    }
+
+    #text_font {
+        font: 20px Calibri, sans-serif;
+        color: white;
+    }
+
+    .content-link {
+        font: 16px Calibri, sans-serif;
+        color: white;
+        text-decoration: underline dotted;
+    }
+
+    .greeting-container {
+        background-color: #070034;
+        padding-top: 10px;
+        padding-bottom: 30px;
+        justify-content: center;
+        place-items: center;
+        border-radius: 16px;
+    }
+
+    .link-container {
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    #arctos_image {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+</style>
 <html>
+    <head>
+        <title>Arctos 6135 OS</title>
+        <link rel="icon" type = "image/x-icon" href = "Copy of Arctos Logo 2019 2.png" />
+    </head>
     <body>
-        <h1>Welcome to my OS!</h1>
-        <h2>Introduction</h2>
-        <p>Hello, and welcome to the OS revolving around the theme of our team dedicated to promoting science, technology, and engineering principles for high school students in and outside of the FIRST Robotics Competition (FRC). Arctos 6135 is an FRC team based in Toronto, Ontario, and was founded in 2016. We are confirmed to be competing in the 2027 BioCore Season in FIRST Canopy after a 16-17 record in 2026 REBUILT, our best performance in the past few years, despite not attending the District Championships in Niagara Falls, Ontario in April 2026.</p>
-        <img src = "Copy of Arctos Logo 2019 2.png"; alt = "Arctos 6135 Logo"/><br>
-        <a href="https://arctos6135.ca">Arctos 6135 Website</a>
-        <a href="https://www.firstinspires.org/">FIRST Website</a>
-        <a href="https://www.youtube.com/watch?v=WTJSt4wP2ME">Wavin' Flag, a song listened to frequently at FIRST Robotics Competition competitions</a>
+        <div 
+            style = "
+                position: absolute; 
+                bottom: 0;
+                left: 0;
+                align-items: center; 
+                background-color: rgba(0, 0, 0, 0.25); 
+                backdrop-filter: blur(10px); 
+                width: 100%; 
+                display: flex; 
+                justify-content: space-between;
+            "
+        >
+
+            <h1 id="heading1_font" style="margin-left: 20px;  background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
+                <img src = "Copy of Arctos Logo 2019 2.png" alt = "Arctos 6135 Logo" id="arctos_image" />
+                ArctosOS
+            </h1>
+
+            <p id="text_font" style = "margin-left: 20px; background-color: rgba(256, 256, 256, 0.125); padding: 4px 12px; border-radius: 16px;">
+                Ready to use ArctosOS!
+            </p>
+
+            <p id="timeElement" 
+                style = "
+                    margin-right: 20px; 
+                    background-color: rgba(256, 256, 256, 0.125); 
+                    padding: 4px 12px; 
+                    border-radius: 16px;
+                    font: 20px Calibri, sans-serif;
+                    color: white;
+                "
+            >
+
+                <script>
+
+                    function updateTime() {
+                        var currentTime = new Date().toLocaleString();
+                        var timeText=document.querySelector("#timeElement");
+                        timeText.innerHTML = currentTime;
+                    }
+                    setInterval(updateTime, 1000);
+                    
+                </script>
+            </p>
+        </div>
+
+        <div id="div-style">
+            <div class = "greeting-container">
+            
+                <h2 id="heading2_font">Welcome!</h2>
+
+                <p id="text_font">
+                    Hello, and welcome to the ArctosOS! Our team is well-known in the Ontario District and is dedicated to promoting science, technology, and engineering principles for high school students in and outside of the FIRST Robotics Competition (FRC). 
+                </p>
+            
+            
+
+                <div class = "link-container">
+                    <a class="content-link" href="https://arctos6135.ca">Our Website</a>
+                    <a class="content-link" href="https://www.firstinspires.org/">FRC Website</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
     </body>
 </html>
