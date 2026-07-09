@@ -9,6 +9,7 @@ Date().toLocaleString();
 
 // Make the DIV element draggable:
 dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("notes"));
 
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function dragElement(element) {
@@ -66,6 +67,10 @@ var welcomeScreen = document.querySelector("#welcome");
 var welcomeScreenClose = document.querySelector("#welcomeclose");
 var welcomeScreenOpen = document.querySelector("#welcomeopen");
 
+var notesScreen = document.querySelector("#notes");
+var notesScreenClose = document.querySelector("#notesclose");
+notesScreenClose.addEventListener("click", () => closeWindow(notesScreen));
+
 welcomeScreenClose.addEventListener("click", function() {
   closeWindow(welcomeScreen);
 });
@@ -81,4 +86,49 @@ function closeWindow(element) {
 
 function openWindow(element) {
   element.style.display = "flex";
+}
+
+
+var selectedIcon = undefined;
+
+function selectIcon(element) {
+  element.classList.add("selected");
+  selectedIcon = element;
+}
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined;
+} 
+
+function handleIconTap(element) {
+  if (element.classList.contains("selected")) {
+    deselectIcon(element);
+    openWindow(window);
+  } else {
+    selectIcon(element);
+  }
+}
+
+var biggestIndex=1;
+
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () => 
+    handleWindowTap(element);
+  )
+}
+
+addWindowTapHandling(welcomeScreen);
+addWindowTapHandling(notesScreen);
+
+function handleWindowTap(element) {
+  biggestIndex++;
+  element.style.zIndex=biggestIndex;
+}
+
+
+function openWindow(element) {
+  element.style.display="flex";
+  biggestIndex++;
+  element.style.zIndex=biggestIndex;
 }

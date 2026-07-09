@@ -6,6 +6,7 @@
         <link rel="icon" type = "image/x-icon" href = "Copy of Arctos Logo 2019 2.png" />
     </head>
     <body>
+        <!--Bottom Bar-->
         <div class="bottombar">
 
             <h1 id="welcomeopen" class="windowui">
@@ -13,27 +14,31 @@
                 ArctosOS
             </h1>
 
-            <p id="text_font" class="readyToUseArctosOS">
-                Ready to use ArctosOS!
-            </p>
+            <div id = "desktopApps" style = "padding-bottom: 32px; padding-left: 16px; padding-top: 32px;">
+                <div class = "selected" style = "text-align: center; padding: 8px; filter: drop-shadow(0 0 8px black); width: fit-content">
+                    <img src = "./notebookImage.jpg" style = "width: 32px; height: 32px; border-radius: 8px;">
+                    <p style = "margin: 0px; color: #fff; padding-top: 5px; font: 16px Calibri, sans-serif;">ArctosNOTES</p>
+                </div>
+
+            </div>
 
             <p id="timeElement" class = "clock">
             </p>
         </div>
 
-        <div id="welcome">
-            
-            <div id="welcomeheader">
+        <!--Welcome-->
+        <div id="welcome" class="window">
+            <div class="top" id="welcomeheader">
                 <div class="closebutton" id = "welcomeclose"></div>
                 <span>Welcome</span>
             </div>
             
 
-            <div class = "greeting-container">
+            <div class = "background">
             
-                <h2 id="heading2_font">Welcome!</h2>
+                <h2 class="heading2_font">Welcome!</h2>
 
-                <p id="text_font">
+                <p class="text_font">
                     Hello, and welcome to the ArctosOS! Our team is well-known in the Ontario District and is dedicated to promoting science, technology, and engineering principles for high school students in and outside of the FIRST Robotics Competition (FRC). 
                 </p>
                 
@@ -46,6 +51,18 @@
             </div> 
         </div>
         
+        <!--ArctosNOTES-->
+        <div id="notes" class="window">
+            <div class="top" id="notesheader">
+                <div class="closebutton" id="notesclose"></div>
+                <span>ArctosNOTES</span>
+            </div>
+
+            <div class="background">
+                <h2 class="heading2_font">test123</h2>
+            </div>
+        </div>
+
         <head>
             <script src="script.js"></script>
             <link rel="stylesheet" type="text/css" href="style.css"/>
